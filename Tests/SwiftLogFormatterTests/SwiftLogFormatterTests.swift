@@ -1,12 +1,10 @@
 import XCTest
-@testable import SwiftLogFormatter
+@testable import LogFormatter
 
 final class SwiftLogFormatterTests: XCTestCase {
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(SwiftLogFormatter().text, "Hello, World!")
+        let formatter = LogDefaultFormatter()
+        print(formatter.format(level: .info, message: "hahaha", metadata: [:], file: "file.swift", function: "funcname", line: 10))
     }
 
     static var allTests = [
